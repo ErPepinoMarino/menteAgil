@@ -1,2 +1,56 @@
-<!doctype html>
-<html><body></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Mente Ágil – Juegos mentales gratis</title>
+
+  <meta name="description"
+        content="Juegos mentales y lógica gratis. Sudoku, nonogramas y más, sin pagos ni suscripciones." />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://erpepinomarino.github.io/menteAgil/" />
+
+  <!-- Idiomas -->
+  <link rel="alternate" hreflang="es" href="https://erpepinomarino.github.io/menteAgil/es/" />
+  <link rel="alternate" hreflang="en" href="https://erpepinomarino.github.io/menteAgil/en/" />
+  <link rel="alternate" hreflang="de" href="https://erpepinomarino.github.io/menteAgil/de/" />
+  <link rel="alternate" hreflang="fr" href="https://erpepinomarino.github.io/menteAgil/fr/" />
+  <link rel="alternate" hreflang="it" href="https://erpepinomarino.github.io/menteAgil/it/" />
+  <link rel="alternate" hreflang="pt" href="https://erpepinomarino.github.io/menteAgil/pt/" />
+  <link rel="alternate" hreflang="ro" href="https://erpepinomarino.github.io/menteAgil/ro/" />
+  <link rel="alternate" hreflang="pl" href="https://erpepinomarino.github.io/menteAgil/pl/" />
+
+  <script>
+    (function () {
+      const lang = navigator.language || navigator.userLanguage;
+      const code = lang.substring(0, 2);
+
+      const supported = ['es','en','de','fr','it','pt','ro','pl'];
+
+      if (supported.includes(code)) {
+        window.location.replace('./' + code + '/');
+      } else {
+        window.location.replace('./en/');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <noscript>
+    <p>
+      Please choose your language:
+      <a href="es/">Español</a> |
+      <a href="en/">English</a> |
+      <a href="de/">Deutsch</a> |
+      <a href="fr/">Français</a> |
+      <a href="it/">Italiano</a> |
+      <a href="pt/">Português</a> |
+      <a href="ro/">Română</a> |
+      <a href="pl/">Polski</a>
+    </p>
+  </noscript>
+</body>
+</html>
