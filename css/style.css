@@ -164,7 +164,7 @@ h2 {
 }
 
 /* =========================
-   GALERÍA MOCKUPS
+   Gallery centrada + filas max 3 + stagger animation
 ========================= */
 .gallery {
   display: grid;
@@ -172,20 +172,39 @@ h2 {
   gap: 20px;
   max-width: 900px;
   margin: 48px auto;
+  justify-content: center;       /* centra las filas incompletas */
+  grid-auto-flow: row dense;     /* rellena huecos y centra */
 }
 
+/* Animación escalonada de entrada */
 .gallery img {
-  width: 200px;
-  max-width: 42vw;
+  width: 100%;
   border-radius: 16px;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: galleryFadeUp 0.6s forwards;
 }
 
-.gallery img:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: var(--shadow-lift);
+/* Stagger automático: cada hijo recibe retraso */
+.gallery img:nth-child(1) { animation-delay: 0s; }
+.gallery img:nth-child(2) { animation-delay: 0.1s; }
+.gallery img:nth-child(3) { animation-delay: 0.2s; }
+.gallery img:nth-child(4) { animation-delay: 0.3s; }
+.gallery img:nth-child(5) { animation-delay: 0.4s; }
+.gallery img:nth-child(6) { animation-delay: 0.5s; }
+
+@keyframes galleryFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+/* Responsive: filas reducidas para tablet y móvil */
 @media (max-width: 900px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -197,7 +216,6 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
-
 /* =========================
    VIDEO
 ========================= */
