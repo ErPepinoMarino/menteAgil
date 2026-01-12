@@ -1,12 +1,21 @@
+/* =========================
+   Variables de color
+========================= */
 :root {
   --bg-main: #f7f5e9;
   --accent: #fdad30;
   --secondary: #b48868;
   --dark: #a52604;
-  --text: #2b2b2b;
+  --text-main: #333333;
+  --card-bg: #fffdf7;
 }
 
-* {
+/* =========================
+   Reset base
+========================= */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -14,62 +23,106 @@ body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--bg-main);
-  color: var(--text);
-  line-height: 1.6;
-  color: #333;
+  color: var(--text-main);
+  line-height: 1.7;
 }
 
-header, main, footer {
+/* =========================
+   Layout general
+========================= */
+header,
+main,
+footer {
   max-width: 1100px;
-  margin: auto;
-  padding: 24px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+section {
+  margin: 72px 0;
+}
+
+/* =========================
+   Tipografía
+========================= */
+h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.6em;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   Header / Hero
+========================= */
+.hero {
+  text-align: center;
+  padding-top: 40px;
 }
 
 .hero img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 14px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14);
 }
 
 .claim {
+  margin: 24px auto 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dark);
   text-align: center;
-  margin-top: 12px;
-  font-weight: 600;
-  color: var(--dark);
 }
 
-h2 {
-  color: var(--dark);
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 0.6em;
-  letter-spacing: -0.01em;
-}
-
+/* =========================
+   Intro
+========================= */
 .intro {
-  max-width: 700px;
+  text-align: center;
 }
 
+.intro p {
+  margin: 0 auto;
+  max-width: 60ch;
+  font-size: 1.1rem;
+}
+
+/* =========================
+   Galería
+========================= */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 12px;
-  margin: 32px 0;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
 }
 
 .gallery img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .gallery img:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
 }
 
+/* =========================
+   Vídeo
+========================= */
 .video-wrapper {
   position: relative;
   padding-top: 56.25%;
-  margin: 32px 0;
+  margin: 48px 0;
 }
 
 .video-wrapper iframe {
@@ -77,84 +130,105 @@ h2 {
   inset: 0;
   width: 100%;
   height: 100%;
+  border: none;
+  border-radius: 12px;
 }
 
+/* =========================
+   Versiones de la app
+========================= */
 .app-versions {
   text-align: center;
-  margin: 48px 0;
+}
+
+.app-versions p {
+  margin: 0 auto 32px;
+  max-width: 60ch;
+  font-size: 1.05rem;
 }
 
 .versions {
   display: flex;
-  gap: 40px;
   justify-content: center;
+  gap: 48px;
   flex-wrap: wrap;
-  margin-top: 24px;
 }
 
 .app-card {
-  max-width: 220px;
-}
-
-.app-card img {
-  width: 100%;
-}
-
-.share {
-  text-align: center;
-  margin: 48px 0;
-  opacity: 0.85;
-}
-
-.share img {
-  width: 32px;
-  margin: 0 8px;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-.share img:hover {
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-footer {
-  text-align: center;
-  font-size: 0.9em;
-  color: #555;
-}
-p {
-  font-size: 1.05rem;
-  max-width: 65ch;
-}
-section {
-  margin: 64px 0;
-}
-
-section > p {
-  margin-top: 12px;
-}
-.hero {
-  text-align: center;
-  padding-top: 32px;
-}
-
-.hero img {
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-}
-
-.claim {
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--dark);
-}
-.app-card {
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease;
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 24px;
+  max-width: 230px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .app-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.12);
+}
+
+.app-card img {
+  width: 100%;
+  display: block;
+}
+
+/* =========================
+   Compartir
+========================= */
+.share {
+  text-align: center;
+}
+
+.share p {
+  margin: 0 auto 20px;
+  font-weight: 500;
+}
+
+.share a {
+  display: inline-block;
+}
+
+.share img {
+  width: 34px;
+  margin: 0 10px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.share img:hover {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+  text-align: center;
+  padding: 48px 24px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 600px) {
+  section {
+    margin: 56px 0;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .claim {
+    font-size: 0.95rem;
+  }
+
+  .versions {
+    gap: 32px;
+  }
 }
