@@ -1,10 +1,10 @@
 /* =========================
-   Paleta térmica refinada
+   Paleta refinada y cálida
 ========================= */
 :root {
   --bg-main: #f3efe2;          /* fondo general cálido */
   --bg-panel: #fbf7ee;         /* paneles suaves */
-  --bg-card: #f7e0c8;          /* app cards más contrastadas */
+  --bg-card: #f9e5c9;          /* app cards más cálidas, menos contraste extremo */
 
   --accent: #fdad30;
   --secondary: #b48868;
@@ -36,8 +36,8 @@ body {
   background-color: var(--bg-main);
   background-image: repeating-linear-gradient(
     to bottom,
-    rgba(0,0,0,0.08) 0,
-    rgba(0,0,0,0.08) 1px,
+    rgba(180,140,100,0.08) 0,
+    rgba(180,140,100,0.08) 1px,
     transparent 1px,
     transparent 24px
   );
@@ -69,9 +69,6 @@ h2 {
   margin-bottom: 0.8em;
   text-align: center;
   text-shadow: var(--text-shadow);
-  background: linear-gradient(90deg, var(--accent), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 p {
@@ -86,7 +83,7 @@ p {
 .hero {
   text-align: center;
   padding-top: 64px;
-  padding-bottom: 24px;
+  padding-bottom: 16px; /* reducido margen inferior */
   position: relative;
   overflow: hidden;
 }
@@ -109,7 +106,7 @@ p {
 }
 
 .claim {
-  margin-top: 32px;
+  margin-top: 28px; /* más cercano al hero */
   font-size: 1.6rem;
   font-weight: 850;
   letter-spacing: 0.12em;
@@ -117,7 +114,7 @@ p {
   color: var(--dark);
   text-align: center;
   text-shadow: var(--text-shadow);
-  background: linear-gradient(120deg, var(--accent), var(--secondary));
+  background: linear-gradient(120deg, var(--dark), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -135,7 +132,7 @@ p {
   padding: 40px 42px;
   box-shadow: var(--shadow-panel);
   max-width: 780px;
-  margin: -48px auto 0;
+  margin: -32px auto 0; /* reducción del espacio con hero */
   position: relative;
   overflow: hidden;
 }
@@ -215,7 +212,7 @@ p {
 }
 
 /* =========================
-   App Cards (contraste máximo)
+   App Cards (fondo más cálido y claro)
 ========================= */
 .versions {
   display: flex;
@@ -227,8 +224,8 @@ p {
 .app-card {
   background: linear-gradient(
     180deg,
-    #f4c999,
-    #f0b77c
+    #fbe8cc,
+    #f8dec2
   );
   border-radius: 30px;
   padding: 36px;
@@ -238,7 +235,7 @@ p {
 }
 
 .app-card:hover {
-  transform: translateY(-14px);
+  transform: translateY(-12px);
   box-shadow: var(--shadow-lift);
 }
 
@@ -283,15 +280,15 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 28px; /* separación clara, sin guiones */
+  gap: 28px; /* sin guiones */
 }
 
 /* =========================
-   Footer más pequeño
+   Footer aún más pequeño
 ========================= */
 footer {
   text-align: center;
-  font-size: 0.82rem;
+  font-size: 0.75rem;
   color: #6a6158;
   margin-bottom: 24px;
 }
@@ -334,7 +331,7 @@ footer {
 
   .claim {
     font-size: 1.35rem;
-    margin-top: 28px;
+    margin-top: 24px;
   }
 
   .panel {
