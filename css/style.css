@@ -311,36 +311,34 @@ ACCESIBILIDAD
 }
 
 /* =========================
-FONDO TEXTURIZADO SUAVE + VIÑETEADO
+FONDO TEXTURIZADO SUAVE + VIÑETEADO (FUNCIONA CROSS-BROWSER)
 ========================= */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -1; /* detrás de todo */
   background-image:
-    radial-gradient(circle at 20% 10%, rgb(196 139 0 / 14%), transparent 42%),
-    radial-gradient(circle at 80% 0%, rgb(180 156 91 / 18%), #3b190000 48%),
+    radial-gradient(circle at 20% 10%, rgba(196, 139, 0, 0.07), transparent 42%),
+    radial-gradient(circle at 80% 0%, rgba(180, 156, 91, 0.12), transparent 48%),
     repeating-linear-gradient(
       to bottom,
-      rgb(196 139 0 / 5%) 0,
-      rgb(254 255 231 / 8%) 3px,
+      rgba(196, 139, 0, 0.03) 0,
+      rgba(254, 255, 231, 0.05) 3px,
       transparent 5px,
       transparent 15px
     );
-  transform: translateZ(0);
-  filter: blur(2px);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body::after {
   content: "";
   position: fixed;
   inset: 0;
+  z-index: 0; /* debajo del contenido */
   pointer-events: none;
-  z-index: 1000;
-  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.12) 70%, transparent 100%);
-  mix-blend-mode: soft-light;
-  backdrop-filter: blur(1px);
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.08) 70%, transparent 100%);
 }
 
 /* =========================
