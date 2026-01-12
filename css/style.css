@@ -1,5 +1,5 @@
 /* =========================
-   RESET BÁSICO
+   RESET CONTROLADO
 ========================= */
 *,
 *::before,
@@ -15,27 +15,42 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #2b2b2b;
-  background-color: #faf7f4;
-  line-height: 1.75;
-}
+  line-height: 1.7;
+  background-color: #f8f5f1;
 
-/* Neutraliza escalados globales */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  /* Fondo orgánico original */
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(253,173,48,0.10), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(180,136,104,0.12), transparent 45%),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(180,140,100,0.06) 0,
+      rgba(180,140,100,0.06) 1px,
+      transparent 1px,
+      transparent 26px
+    );
 }
 
 /* =========================
-   VARIABLES
+   VARIABLES VISUALES
 ========================= */
 :root {
   --accent: #b86b3d;
-  --text-main: #2b2b2b;
-  --text-soft: #6b6b6b;
+  --accent-soft: #e6c2a8;
   --panel-bg: #ffffff;
-  --shadow-soft: 0 10px 30px rgba(0,0,0,0.06);
-  --shadow-lift: 0 20px 40px rgba(0,0,0,0.12);
+  --text-soft: #6b6b6b;
+
+  --shadow-soft: 0 12px 30px rgba(0,0,0,0.08);
+  --shadow-lift: 0 24px 50px rgba(0,0,0,0.14);
+}
+
+/* =========================
+   IMÁGENES (control absoluto)
+========================= */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* =========================
@@ -44,8 +59,9 @@ img {
 .hero {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px 24px;
+  padding: clamp(32px, 6vw, 64px) 20px 24px;
   text-align: center;
+  position: relative;
 }
 
 .hero img {
@@ -53,17 +69,48 @@ img {
   max-width: 1025px;
   aspect-ratio: 1025 / 500;
   object-fit: contain;
-  margin: 0 auto 16px;
+  margin: 0 auto 24px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  animation: heroFloat 1.2s ease-out both;
 }
 
-.claim {
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--accent);
+@keyframes heroFloat {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* =========================
-   SECCIONES
+   CLAIM (PROTAGONISTA)
+========================= */
+.claim {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  animation: claimReveal 1.4s ease-out both;
+}
+
+@keyframes claimReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   MAIN
 ========================= */
 main {
   max-width: 1100px;
@@ -71,17 +118,26 @@ main {
   padding: 0 20px;
 }
 
+/* =========================
+   PANELES
+========================= */
 .panel {
   background: var(--panel-bg);
-  border-radius: 16px;
-  padding: 32px;
-  margin: 48px 0;
+  border-radius: 20px;
+  padding: clamp(24px, 5vw, 40px);
+  margin: clamp(48px, 8vw, 72px) 0;
   box-shadow: var(--shadow-soft);
 }
 
 h2 {
   margin: 0 0 16px;
   line-height: 1.25;
+  text-align: center;
+}
+
+.panel p {
+  text-align: center;
+  color: var(--text-soft);
 }
 
 /* =========================
@@ -96,14 +152,14 @@ h2 {
 
 .gallery img {
   width: 200px;
-  max-width: 40vw;
-  border-radius: 12px;
+  max-width: 42vw;
+  border-radius: 16px;
   box-shadow: var(--shadow-soft);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .gallery img:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px) scale(1.03);
   box-shadow: var(--shadow-lift);
 }
 
@@ -111,12 +167,12 @@ h2 {
    VIDEO
 ========================= */
 .video {
-  margin: 64px 0;
+  margin: clamp(56px, 10vw, 80px) 0;
 }
 
 .video-wrapper {
   position: relative;
-  max-width: 800px;
+  max-width: 820px;
   margin: 0 auto;
   padding-top: 56.25%;
 }
@@ -127,7 +183,8 @@ h2 {
   width: 100%;
   height: 100%;
   border: 0;
-  border-radius: 16px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
 }
 
 /* =========================
@@ -142,15 +199,15 @@ h2 {
 
 .app-card {
   background: #fff;
-  padding: 24px;
-  border-radius: 16px;
+  padding: 28px;
+  border-radius: 20px;
   box-shadow: var(--shadow-soft);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   text-align: center;
 }
 
 .app-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-12px);
   box-shadow: var(--shadow-lift);
 }
 
@@ -160,10 +217,10 @@ h2 {
 }
 
 /* =========================
-   SHARE – FIX DEFINITIVO SVG
+   SHARE (FIX DEFINITIVO)
 ========================= */
 .share {
-  margin: 64px 0;
+  margin: clamp(56px, 8vw, 72px) 0;
   text-align: center;
 }
 
@@ -176,20 +233,17 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   margin: 0 12px;
 }
 
-/* AQUÍ ESTÁ LA CLAVE */
 .share img {
   width: 22px !important;
   height: 22px !important;
   max-width: 22px !important;
   max-height: 22px !important;
   object-fit: contain;
-  flex: 0 0 auto;
-  transform: none !important;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
@@ -205,15 +259,15 @@ h2 {
 }
 
 /* =========================
-   FOOTER (letra pequeña real)
+   FOOTER
 ========================= */
 footer {
   text-align: center;
-  padding: 32px 20px;
+  padding: 32px 20px 40px;
 }
 
 footer p {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--text-soft);
 }
 
