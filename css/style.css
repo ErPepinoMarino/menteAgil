@@ -1,36 +1,23 @@
 /* =========================
-   RESET CONTROLADO
+RESET CONTROLADO
 ========================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+*, *::before,
+*::after { box-sizing: border-box; }
+html { font-size: 16px; }
+body { 
+   margin: 0;
+   font-family: -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #4a3f38; /* texto cálido */
+   line-height: 1.7; background-color: #f7f3ed; /* crema cálido */ 
 }
-
-html {
-  font-size: 16px;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #2b2b2b;
-  line-height: 1.7;
-  background-color: #f8f6f1b5;
-}
-
 /* =========================
    VARIABLES VISUALES
 ========================= */
-:root {
-  --accent: #b86b3d;
-  --accent-soft: #e6c2a8;
-  --panel-bg: #ffffff;
-  --text-soft: #6b6b6b;
-
-  --shadow-soft: 0 12px 30px rgba(0,0,0,0.08);
-  --shadow-lift: 0 24px 50px rgba(0,0,0,0.14);
-}
+:root { --accent: #c46a3a; /* terracota suave */
+       --accent-soft: #f1d7c3; /* arena rosada */
+       --panel-bg: #ffffff; --text-soft: #7a6f68; /* marrón grisáceo suave */
+       --shadow-soft: 0 12px 30px rgba(120, 80, 50, 0.08);
+       --shadow-lift: 0 24px 50px rgba(120, 80, 50, 0.14); }
 
 /* =========================
    IMÁGENES (control absoluto)
@@ -84,7 +71,7 @@ img {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-size: clamp(1rem, 3.5vw, 1.35rem);
-  color: #ba1c1c; /* marrón rojizo principal */
+  color: var(--accent);
   transition:
     transform 0.4s ease,
     opacity 0.4s ease;
@@ -123,26 +110,28 @@ main {
    PANELES
 ========================= */
 .panel {
-  background: linear-gradient(to bottom, rgb(250 250 250), rgb(242 242 242));
-  border-radius: 22px;
-  padding: clamp(24px, 5vw, 40px);
-  margin: clamp(48px, 8vw, 72px) 0;
-  box-shadow:
-    0 14px 34px rgba(120,70,40,0.12),
-    inset 0 1px 0 rgba(255,255,255,0.8);
+   background: linear-gradient(
+      to bottom, rgb(255 252 248),
+      rgb(248 242 236)
+   );
+   border-radius: 22px;
+   padding: clamp(24px, 5vw, 40px);
+   margin: clamp(48px, 8vw, 72px) 0;
+   box-shadow: 0 14px 34px rgba(120, 80, 50, 0.12),
+      inset 0 1px 0 rgba(255,255,255,0.8); 
 }
 
 h2 {
   margin: 0 0 16px;
   line-height: 1.25;
   text-align: center;
-  color: #001925; 
+  color: #3a2f2a; /* marrón profundo cálido */
   font-weight: 00;
 }
 
 .panel p {
   text-align: center;
-  color: #6e625d; 
+  color: var(--text-soft);
 }
 
 /* Contenedor de galería */
