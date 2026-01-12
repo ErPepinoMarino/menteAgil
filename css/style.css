@@ -1,0 +1,163 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   VARIABLES DE COLOR
+========================= */
+:root {
+  --bg-main: #f7f5e9;
+  --color-primary: #fdad30;
+  --color-secondary: #b48868;
+  --color-accent: #a52604;
+  --text-main: #2b2b2b;
+  --text-muted: #6b6b6b;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+section {
+  margin: 60px 0;
+}
+
+h1, h2, h3 {
+  color: var(--color-accent);
+  margin-bottom: 16px;
+}
+
+p {
+  color: var(--text-main);
+  max-width: 750px;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+header p {
+  margin-top: 16px;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+/* =========================
+   GALERÍA
+========================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* =========================
+   VIDEO
+========================= */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================
+   VERSIONES APP
+========================= */
+.app-versions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  text-align: center;
+}
+
+.app-card {
+  max-width: 260px;
+}
+
+.app-card img.logo {
+  width: 120px;
+  margin-bottom: 12px;
+}
+
+.app-card p {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: var(--text-muted);
+}
+
+.app-card img.badge {
+  width: 180px;
+}
+
+/* =========================
+   SHARE
+========================= */
+.share {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.share img {
+  width: 32px;
+  height: 32px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.share img:hover {
+  opacity: 1;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 60px 0 20px;
+}
