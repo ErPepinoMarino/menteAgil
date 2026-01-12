@@ -122,15 +122,12 @@ img {
 
 @keyframes claimScroll {
   from {
-    opacity: 1;
     transform: translateY(0) scale(1);
   }
   to {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.94);
+    transform: translateY(-6px) scale(1.1);
   }
 }
-
 /* =========================
    MAIN
 ========================= */
@@ -175,10 +172,11 @@ h2 {
    GALERÍA MOCKUPS
 ========================= */
 .gallery {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 48px auto;
 }
 
 .gallery img {
@@ -192,6 +190,17 @@ h2 {
 .gallery img:hover {
   transform: translateY(-10px) scale(1.03);
   box-shadow: var(--shadow-lift);
+}
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =========================
