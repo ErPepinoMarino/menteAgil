@@ -90,18 +90,18 @@ img {
    CLAIM (PROTAGONISTA)
 ========================= */
 .claim {
-  text-shadow: 0 2px 6px rgba(156,74,43,0.25);
+  text-shadow: 0 2px 6px rgb(54 45 42 / 25%);
 }
 .claim {
   position: relative;
-  margin-top: 8px;
+  margin-top: 10px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 
   font-size: clamp(1rem, 3.5vw, 1.35rem);
 
-  color: #9c4a2b; /* marrón rojizo principal */
+  color: #ba1c1c; /* marrón rojizo principal */
 
   transition:
     transform 0.4s ease,
@@ -141,12 +141,7 @@ main {
    PANELES
 ========================= */
 .panel {
-  background:
-    linear-gradient(
-      to bottom,
-      #fff7f1,
-      #ffffff
-    );
+  background: linear-gradient(to bottom, #f6f3ec, #f5eee9);
   border-radius: 22px;
   padding: clamp(24px, 5vw, 40px);
   margin: clamp(48px, 8vw, 72px) 0;
@@ -159,8 +154,8 @@ h2 {
   margin: 0 0 16px;
   line-height: 1.25;
   text-align: center;
-  color: #6b3b24; /* marrón oscuro */
-  font-weight: 700;
+  color: #001925; 
+  font-weight: 00;
 }
 
 .panel p {
@@ -238,7 +233,7 @@ h2 {
 }
 
 .app-card {
-  background: #fff;
+  background: #fffbf7;
   padding: 28px;
   border-radius: 20px;
   box-shadow: var(--shadow-soft);
