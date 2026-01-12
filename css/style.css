@@ -9,9 +9,9 @@ html { font-size: 16px; }
 body { 
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #4a3f38; /* texto cálido */
+  color: #4a3f38;
   line-height: 1.7;
-  background-color: #f7f3ed; /* crema cálido */ 
+  background-color: #f7f3ed;
   position: relative;
   overflow-x: hidden;
 }
@@ -20,10 +20,10 @@ body {
 VARIABLES VISUALES
 ========================= */
 :root { 
-  --accent: #c46a3a; /* terracota suave */
-  --accent-soft: #f1d7c3; /* arena rosada */
+  --accent: #c46a3a;
+  --accent-soft: #f1d7c3;
   --panel-bg: #ffffff; 
-  --text-soft: #7a6f68; /* marrón grisáceo suave */
+  --text-soft: #7a6f68;
   --shadow-soft: 0 12px 30px rgba(120, 80, 50, 0.08);
   --shadow-lift: 0 24px 50px rgba(120, 80, 50, 0.14);
 }
@@ -46,10 +46,8 @@ HERO
   padding: clamp(32px, 6vw, 64px) 20px 24px;
   text-align: center;
   position: relative;
-  opacity: 0;
-  transform: translateY(24px);
-  animation: scrollFadeUp 0.8s ease-out both;
-  animation-timeline: --scroll;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero img {
@@ -60,10 +58,8 @@ HERO
   margin: 0 auto 24px;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(120,80,50,0.1);
-  opacity: 0;
-  transform: translateY(24px);
-  animation: scrollFadeUp 0.8s ease-out both;
-  animation-timeline: --scroll;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =========================
@@ -78,10 +74,8 @@ CLAIM
   font-size: clamp(1rem, 3.5vw, 1.35rem);
   color: var(--accent);
   transition: transform 0.4s ease, color 0.4s ease;
-  opacity: 0;
-  transform: translateY(24px);
-  animation: scrollFadeUp 0.8s ease-out both;
-  animation-timeline: --scroll;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .claim:hover {
@@ -108,10 +102,8 @@ PANELES
   margin: clamp(48px, 8vw, 72px) 0;
   box-shadow: 0 14px 34px rgba(120, 80, 50, 0.12), inset 0 1px 0 rgba(255,255,255,0.8);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  transform: translateY(24px);
-  animation: scrollFadeUp 0.8s ease-out both;
-  animation-timeline: --scroll;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .panel:hover {
@@ -150,18 +142,9 @@ GALERÍA
   width: 100%;
   height: auto;
   border-radius: 16px;
-  opacity: 0;
-  transform: translateY(24px);
-  animation: scrollFadeUp 0.8s ease-out both;
-  animation-timeline: --scroll;
+  opacity: 1;
+  transform: translateY(0);
 }
-
-.gallery img:nth-child(1) { animation-delay: 0s; }
-.gallery img:nth-child(2) { animation-delay: 0.1s; }
-.gallery img:nth-child(3) { animation-delay: 0.2s; }
-.gallery img:nth-child(4) { animation-delay: 0.3s; }
-.gallery img:nth-child(5) { animation-delay: 0.4s; }
-.gallery img:nth-child(6) { animation-delay: 0.5s; }
 
 @media (max-width: 900px) {
   .gallery img {
@@ -173,12 +156,10 @@ GALERÍA
 /* =========================
 VIDEO
 ========================= */
-.video {
+.video, .video-wrapper {
   margin: clamp(56px, 10vw, 80px) 0;
-  opacity: 0;
-  transform: translateY(24px);
-  animation: scrollFadeUp 0.8s ease-out both;
-  animation-timeline: --scroll;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .video-wrapper {
@@ -187,10 +168,6 @@ VIDEO
   margin: 0 auto;
   padding-top: 56.25%;
   box-shadow: 0 20px 60px rgba(120,80,50,0.08);
-  opacity: 0;
-  transform: translateY(24px);
-  animation: scrollFadeUp 0.8s ease-out both;
-  animation-timeline: --scroll;
 }
 
 .video-wrapper iframe {
@@ -220,10 +197,8 @@ APP CARDS
   box-shadow: var(--shadow-soft);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   text-align: center;
-  opacity: 0;
-  transform: translateY(24px);
-  animation: scrollFadeUp 0.8s ease-out both;
-  animation-timeline: --scroll;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .app-card:hover {
@@ -242,10 +217,8 @@ SHARE
 .share {
   margin: clamp(56px, 8vw, 72px) 0;
   text-align: center;
-  opacity: 0;
-  transform: translateY(24px);
-  animation: scrollFadeUp 0.8s ease-out both;
-  animation-timeline: --scroll;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .share p {
@@ -303,21 +276,14 @@ ACCESIBILIDAD
   outline-offset: 3px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
 /* =========================
-FONDO TEXTURIZADO SUAVE + VIÑETEADO (FUNCIONA CROSS-BROWSER)
+FONDO TEXTURIZADO SUAVE + VIÑETEADO
 ========================= */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1; /* detrás de todo */
+  z-index: -1;
   background-image:
     radial-gradient(circle at 20% 10%, rgba(196, 139, 0, 0.07), transparent 42%),
     radial-gradient(circle at 80% 0%, rgba(180, 156, 91, 0.12), transparent 48%),
@@ -336,19 +302,7 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 0; /* debajo del contenido */
+  z-index: 0;
   pointer-events: none;
   background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.08) 70%, transparent 100%);
-}
-
-/* =========================
-SCROLL TIMELINE
-========================= */
-@scroll-timeline --scroll {
-  source: auto;
-  orientation: block;
-}
-@keyframes scrollFadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
 }
