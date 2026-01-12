@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
+  <title>Mente Ágil – Juegos mentales gratis</title>
 
-  <title>Minte Agilă, Sudoku și alte jocuri mentale</title>
+  <meta name="description"
+        content="Juegos mentales y lógica gratis. Sudoku, nonogramas y más, sin pagos ni suscripciones." />
 
-  <meta name="description" content="Antrenează-ți mintea în fiecare zi cu Minte Agilă, aplicația de jocuri mentale și antrenament cognitiv creată pentru a îmbunătăți memoria, logica și a-ți menține mintea activă." />
-  <meta name="keywords" content="Minte Agilă, Sudoku, Nonogram, jocuri mentale, antrenament cognitiv, logică, memorie, aplicație gratuită, jocuri educative" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://erpepinomarino.github.io/menteAgil/ro/" />
+  <!-- SEO -->
+  <link rel="canonical" href="https://erpepinomarino.github.io/menteAgil/" />
 
-  <!-- Alternate languages -->
+  <!-- Idiomas -->
   <link rel="alternate" hreflang="es" href="https://erpepinomarino.github.io/menteAgil/es/" />
   <link rel="alternate" hreflang="en" href="https://erpepinomarino.github.io/menteAgil/en/" />
   <link rel="alternate" hreflang="de" href="https://erpepinomarino.github.io/menteAgil/de/" />
@@ -22,102 +22,35 @@
   <link rel="alternate" hreflang="ro" href="https://erpepinomarino.github.io/menteAgil/ro/" />
   <link rel="alternate" hreflang="pl" href="https://erpepinomarino.github.io/menteAgil/pl/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Minte Agilă, Sudoku și alte jocuri mentale">
-  <meta property="og:description" content="Antrenează-ți mintea în fiecare zi cu Minte Agilă, aplicația de jocuri mentale și antrenament cognitiv creată pentru a îmbunătăți memoria, logica și a-ți menține mintea activă.">
-  <meta property="og:image" content="https://erpepinomarino.github.io/menteAgil/assets/ro/BANNER_RO.webp">
-  <meta property="og:url" content="https://erpepinomarino.github.io/menteAgil/ro/">
-  <meta property="og:type" content="website">
+  <script>
+    (function () {
+      const lang = navigator.language || navigator.userLanguage;
+      const code = lang.substring(0, 2);
 
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Minte Agilă, Sudoku și alte jocuri mentale">
-  <meta name="twitter:description" content="Antrenează-ți mintea în fiecare zi cu Minte Agilă, aplicația de jocuri mentale și antrenament cognitiv creată pentru a îmbunătăți memoria, logica și a-ți menține mintea activă.">
-  <meta name="twitter:image" content="https://erpepinomarino.github.io/menteAgil/assets/ro/BANNER_RO.webp">
+      const supported = ['es','en','de','fr','it','pt','ro','pl'];
 
-  <!-- Schema JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Minte Agilă",
-    "operatingSystem": "Android",
-    "applicationCategory": "GameApplication",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "url": "https://erpepinomarino.github.io/menteAgil/ro/",
-    "description": "Antrenează-ți mintea în fiecare zi cu Minte Agilă, aplicația de jocuri mentale și antrenament cognitiv creată pentru a îmbunătăți memoria, logica și a-ți menține mintea activă.",
-    "image": "https://erpepinomarino.github.io/menteAgil/assets/ro/BANNER_RO.webp"
-  }
+      if (supported.includes(code)) {
+        window.location.replace('./' + code + '/');
+      } else {
+        window.location.replace('./en/');
+      }
+    })();
   </script>
-
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.5; background-color:#121212; color:#ffffff; }
-    header, main, footer { max-width:900px; margin:auto; padding:20px; }
-    header h1 { font-size:2em; margin-bottom:0.2em; }
-    header p { margin:0.5em 0; }
-    .mockups { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
-    .mockups img { width:calc(20% - 8px); height:auto; border-radius:4px; border:1px solid #ccc; }
-    iframe { width:100%; max-width:560px; height:315px; margin-top:20px; border:none; }
-    .share-icons { margin-top:20px; }
-    .share-icons img { width:32px; height:32px; margin-right:10px; vertical-align:middle; }
-    a { color:#1e90ff; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-  </style>
 </head>
 
 <body>
-
-  <header>
-  <img src="../assets/ro/BANNER_RO.webp" alt="Minte Agilă Banner" style="width:100%;margin:20px 0;">
-  <p>100% GRATUIT, FĂRĂ ACHIZIȚII ÎN-APP, FĂRĂ TRUCURI</p>
-</header>
-
-  <main>
-
-    <section>
-      <h2>Ce este Minte Agilă?</h2>
-      <p>
-        Minte Agilă este o aplicație de exerciții mentale care provoacă logica, memoria și concentrarea. Include Sudoku, Nonogram și alte jocuri cognitive.
-      </p>
-    </section>
-
-    <section class="mockups">
-      <img src="../assets/ro/SLIDE_1_RO.webp" alt="Ecran 1">
-      <img src="../assets/ro/SLIDE_2_RO.webp" alt="Ecran 2">
-      <img src="../assets/ro/SLIDE_3_RO.webp" alt="Ecran 3">
-      <img src="../assets/ro/SLIDE_4_RO.webp" alt="Ecran 4">
-      <img src="../assets/ro/SLIDE_5_RO.webp" alt="Ecran 5">
-    </section>
-
-    <section>
-      <iframe src="https://www.youtube.com/embed/TU_VIDEO_ID_RO" title="Trailer Minte Agilă" allowfullscreen></iframe>
-    </section>
-
-    <section class="share-icons">
-      <p>Distribuie aplicația:</p>
-      <a href="https://twitter.com/intent/tweet?text=Antrenează-ți mintea cu Minte Agilă&url=https://erpepinomarino.github.io/menteAgil/ro/" target="_blank">
-        <img src="../assets/share/x_icon.svg" alt="X">
-      </a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://erpepinomarino.github.io/menteAgil/ro/" target="_blank">
-        <img src="../assets/share/fb_icon.svg" alt="Facebook">
-      </a>
-      <a href="https://api.whatsapp.com/send?text=Antrenează-ți mintea cu Minte Agilă https://erpepinomarino.github.io/menteAgil/ro/" target="_blank">
-        <img src="../assets/share/wp_icon.svg" alt="WhatsApp">
-      </a>
-      <a href="https://www.instagram.com/?url=https://erpepinomarino.github.io/menteAgil/ro/" target="_blank">
-        <img src="../assets/share/ig_icon.svg" alt="Instagram">
-      </a>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>© Minte Agilă | Disponibil pe Google Play</p>
-  </footer>
-
+  <noscript>
+    <p>
+      Please choose your language:
+      <a href="es/">Español</a> |
+      <a href="en/">English</a> |
+      <a href="de/">Deutsch</a> |
+      <a href="fr/">Français</a> |
+      <a href="it/">Italiano</a> |
+      <a href="pt/">Português</a> |
+      <a href="ro/">Română</a> |
+      <a href="pl/">Polski</a>
+    </p>
+  </noscript>
 </body>
 </html>
