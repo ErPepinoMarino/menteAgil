@@ -77,8 +77,8 @@ img {
 
 @keyframes heroFloat {
   from {
-    opacity: 0;
-    transform: translateY(24px) scale(0.97);
+    opacity: 0.75;
+    transform: translateY(24px) scale(0.9);
   }
   to {
     opacity: 1;
