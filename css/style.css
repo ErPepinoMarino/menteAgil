@@ -16,12 +16,12 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: #2b2b2b;
   line-height: 1.7;
-  background-color: #f8f6f1d9;
+  background-color: #f8f6f1b5;
 
   /* Fondo orgánico original */
   background-image:
-    radial-gradient(circle at 20% 10%, rgba(253,173,48,0.10), transparent 40%),
-    radial-gradient(circle at 80% 0%, rgba(180,136,104,0.12), transparent 45%),
+    radial-gradient(circle at 20% 10%, rgb(41 27 0 / 7%), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgb(0 37 35 / 12%), transparent 45%),
     repeating-linear-gradient(
       to bottom,
       rgba(180,140,100,0.06) 0,
@@ -141,7 +141,7 @@ main {
    PANELES
 ========================= */
 .panel {
-  background: linear-gradient(to bottom, #f6f3ec, #f5eee9);
+  background: linear-gradient(to bottom, #f7f7f7, #f3efe4);
   border-radius: 22px;
   padding: clamp(24px, 5vw, 40px);
   margin: clamp(48px, 8vw, 72px) 0;
@@ -344,8 +344,8 @@ body::before {
   inset: 0;
   z-index: -1;
   background-image:
-    radial-gradient(circle at 20% 10%, rgba(253,173,48,0.14), transparent 42%),
-    radial-gradient(circle at 80% 0%, rgba(180,136,104,0.18), transparent 48%),
+    radial-gradient(circle at 20% 10%, rgb(208 152 64 / 14%), transparent 42%),
+    radial-gradient(circle at 80% 0%, rgb(180 156 91 / 18%), #3b190000 48%),
     repeating-linear-gradient(
       to bottom,
       rgba(180,140,100,0.08) 0,
