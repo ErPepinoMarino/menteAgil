@@ -1,16 +1,21 @@
 /* =========================
-   Variables de color
+   Paleta térmica refinada
 ========================= */
 :root {
-  --bg-main: #f7f5e9;
-  --surface: #fdfaf2;
+  --bg-main: #f3efe2;          /* fondo general más cálido */
+  --bg-panel: #fbf7ee;         /* paneles suaves */
+  --bg-card: #f8f1e4;          /* app cards aún más cálidas */
+
   --accent: #fdad30;
   --secondary: #b48868;
   --dark: #a52604;
-  --text-main: #2f2f2f;
-  --text-soft: #555;
-  --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.08);
-  --shadow-lift: 0 18px 40px rgba(0, 0, 0, 0.14);
+
+  --text-main: #2e2a26;
+  --text-soft: #5c534b;
+
+  --shadow-panel: 0 18px 40px rgba(80, 60, 30, 0.10);
+  --shadow-card: 0 14px 28px rgba(80, 60, 30, 0.12);
+  --shadow-lift: 0 28px 60px rgba(80, 60, 30, 0.18);
 }
 
 /* =========================
@@ -38,60 +43,71 @@ main,
 footer {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 56px 24px;
 }
 
 section {
-  margin: 88px 0;
+  margin: 96px 0;
 }
 
 /* =========================
    Tipografía
 ========================= */
 h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: -0.015em;
+  font-size: 2.4rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
   color: var(--dark);
   margin-bottom: 0.6em;
   text-align: center;
 }
 
 p {
-  font-size: 1.08rem;
+  font-size: 1.12rem;
   color: var(--text-soft);
 }
 
 /* =========================
-   Hero
+   HERO – ahora manda
 ========================= */
 .hero {
   text-align: center;
+  padding-top: 72px;
 }
 
 .hero img {
   width: 100%;
-  border-radius: 16px;
+  border-radius: 22px;
   box-shadow: var(--shadow-lift);
+  transform: translateY(0);
+  transition: transform 0.6s ease;
+}
+
+.hero img:hover {
+  transform: translateY(-4px);
 }
 
 .claim {
-  margin-top: 28px;
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  margin-top: 36px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--dark);
 }
 
 /* =========================
-   Paneles en relieve
+   Paneles (menos hospital)
 ========================= */
 .panel {
-  background: var(--surface);
-  border-radius: 20px;
-  padding: 48px 40px;
-  box-shadow: var(--shadow-soft);
+  background: linear-gradient(
+    180deg,
+    var(--bg-panel),
+    #f6efdf
+  );
+  border-radius: 26px;
+  padding: 56px 48px;
+  box-shadow: var(--shadow-panel);
 }
 
 /* =========================
@@ -104,7 +120,7 @@ p {
 .intro p {
   max-width: 60ch;
   margin: 0 auto;
-  font-size: 1.15rem;
+  font-size: 1.18rem;
 }
 
 /* =========================
@@ -113,19 +129,18 @@ p {
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 18px;
+  gap: 20px;
 }
 
 .gallery img {
   width: 100%;
-  border-radius: 12px;
-  transition: transform 0.35s cubic-bezier(.2,.8,.2,1),
-              box-shadow 0.35s cubic-bezier(.2,.8,.2,1);
+  border-radius: 14px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .gallery img:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lift);
+  box-shadow: var(--shadow-card);
 }
 
 /* =========================
@@ -134,7 +149,7 @@ p {
 .video-wrapper {
   position: relative;
   padding-top: 56.25%;
-  margin: 56px 0;
+  margin: 72px 0;
 }
 
 .video-wrapper iframe {
@@ -142,12 +157,13 @@ p {
   inset: 0;
   width: 100%;
   height: 100%;
-  border-radius: 14px;
+  border-radius: 18px;
   border: none;
+  box-shadow: var(--shadow-panel);
 }
 
 /* =========================
-   Versiones de la app
+   App Versions
 ========================= */
 .app-versions {
   text-align: center;
@@ -155,29 +171,35 @@ p {
 
 .app-versions p {
   max-width: 62ch;
-  margin: 0 auto 40px;
-  font-size: 1.1rem;
+  margin: 0 auto 48px;
+  font-size: 1.15rem;
 }
 
 .versions {
   display: flex;
   justify-content: center;
-  gap: 56px;
+  gap: 64px;
   flex-wrap: wrap;
 }
 
+/* =========================
+   App Cards (más madera, menos quirófano)
+========================= */
 .app-card {
-  background: var(--surface);
-  border-radius: 22px;
-  padding: 28px;
+  background: linear-gradient(
+    180deg,
+    var(--bg-card),
+    #f1e6d3
+  );
+  border-radius: 28px;
+  padding: 32px;
   max-width: 240px;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.35s cubic-bezier(.2,.8,.2,1),
-              box-shadow 0.35s cubic-bezier(.2,.8,.2,1);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
 
 .app-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
   box-shadow: var(--shadow-lift);
 }
 
@@ -194,20 +216,20 @@ p {
 }
 
 .share p {
-  font-weight: 600;
-  margin-bottom: 24px;
+  font-weight: 650;
+  margin-bottom: 28px;
 }
 
 .share img {
-  width: 36px;
-  margin: 0 12px;
-  opacity: 0.85;
+  width: 38px;
+  margin: 0 14px;
+  opacity: 0.8;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .share img:hover {
   opacity: 1;
-  transform: scale(1.15);
+  transform: scale(1.18);
 }
 
 /* =========================
@@ -216,7 +238,30 @@ p {
 footer {
   text-align: center;
   font-size: 0.95rem;
-  color: #666;
+  color: #6a6158;
+}
+
+/* =========================
+   Scroll animations (CSS only)
+========================= */
+@media (prefers-reduced-motion: no-preference) {
+  section,
+  .hero img {
+    animation: fadeUp 0.9s ease both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 /* =========================
@@ -224,22 +269,22 @@ footer {
 ========================= */
 @media (max-width: 600px) {
   section {
-    margin: 64px 0;
+    margin: 72px 0;
   }
 
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.9rem;
   }
 
   .claim {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 
   .panel {
-    padding: 36px 24px;
+    padding: 40px 28px;
   }
 
   .versions {
-    gap: 36px;
+    gap: 40px;
   }
 }
