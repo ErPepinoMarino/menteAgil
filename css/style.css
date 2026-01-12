@@ -10,8 +10,8 @@
   --secondary: #b48868;
   --dark: #8f2b17;
 
-  --text-main: #2e2a26;
-  --text-soft: #5c534b;
+  --text-main: #2b2622;   /* un poco más contraste */
+  --text-soft: #5a5149;
 
   --shadow-panel: 0 16px 36px rgba(80, 60, 30, 0.14);
   --shadow-card: 0 14px 28px rgba(80, 60, 30, 0.18);
@@ -34,21 +34,24 @@ img {
 }
 
 /* =========================
-   BODY
+   BODY – fondo orgánico
 ========================= */
 body {
   margin: 0;
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--text-main);
-  line-height: 1.7;
+  line-height: 1.75;
   background-color: var(--bg-main);
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(160,120,80,0.14) 0,
-    rgba(160,120,80,0.14) 1px,
-    transparent 1px,
-    transparent 22px
-  );
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(253,173,48,0.10), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(180,136,104,0.12), transparent 45%),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(180,140,100,0.06) 0,
+      rgba(180,140,100,0.06) 1px,
+      transparent 1px,
+      transparent 26px
+    );
 }
 
 /* =========================
@@ -74,7 +77,7 @@ h2 {
   font-weight: 750;
   color: var(--dark);
   text-align: center;
-  margin-bottom: 0.7em;
+  margin: 0 0 0.6em; /* equidistancia real */
 }
 
 p {
@@ -87,7 +90,7 @@ p {
 ========================= */
 .hero {
   text-align: center;
-  padding-bottom: 8px;
+  padding-bottom: 6px;
 }
 
 .hero img {
@@ -104,7 +107,9 @@ p {
   transform: translateY(-6px);
 }
 
-/* CLAIM – degradado marrón rojizo real */
+/* =========================
+   CLAIM – scroll animation
+========================= */
 .claim {
   margin-top: 22px;
   font-size: 1.55rem;
@@ -113,12 +118,32 @@ p {
   text-transform: uppercase;
   background: linear-gradient(
     90deg,
-    #7a1f12,
-    #a03a1e,
-    #7a1f12
+    #6f1d12,
+    #a13a22,
+    #6f1d12
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* animación suave con scroll */
+@media (prefers-reduced-motion: no-preference) {
+  .claim {
+    animation: claimFade 0.9s ease both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+
+  @keyframes claimFade {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 /* =========================
@@ -130,7 +155,7 @@ p {
   padding: 40px;
   box-shadow: var(--shadow-panel);
   max-width: 760px;
-  margin: -20px auto 0;
+  margin: -18px auto 0;
 }
 
 /* =========================
@@ -146,7 +171,7 @@ p {
 }
 
 /* =========================
-   GALERÍA / MOCKUPS
+   GALERÍA
 ========================= */
 .gallery {
   display: grid;
@@ -213,12 +238,11 @@ p {
 
 .app-card img {
   max-width: 100%;
-  height: auto;
   margin: 0 auto 14px;
 }
 
 /* =========================
-   SHARE
+   SHARE – iconos pequeños
 ========================= */
 .share {
   text-align: center;
@@ -228,12 +252,13 @@ p {
 .share-icons {
   display: flex;
   justify-content: center;
-  gap: 26px;
+  gap: 22px;
 }
 
 .share-icons img {
-  width: 32px;
-  height: 32px;
+  width: 22px;
+  height: 22px;
+  display: block;
   transition: transform 0.25s ease;
 }
 
@@ -242,12 +267,17 @@ p {
 }
 
 /* =========================
-   FOOTER
+   FOOTER – muy pequeño
 ========================= */
 footer {
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 0.5rem; /* mitad real */
   color: #6a6158;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 /* =========================
