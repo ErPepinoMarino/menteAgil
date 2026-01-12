@@ -141,7 +141,7 @@ main {
    PANELES
 ========================= */
 .panel {
-  background: linear-gradient(to bottom, #f7f7f7, #f3efe4);
+  background: linear-gradient(to bottom, rgb(242 243 241), rgb(253 251 245));
   border-radius: 22px;
   padding: clamp(24px, 5vw, 40px);
   margin: clamp(48px, 8vw, 72px) 0;
