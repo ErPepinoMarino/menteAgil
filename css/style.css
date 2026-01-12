@@ -17,18 +17,6 @@ body {
   color: #2b2b2b;
   line-height: 1.7;
   background-color: #f8f6f1b5;
-
-  /* Fondo orgánico original */
-  background-image:
-    radial-gradient(circle at 20% 10%, rgb(41 27 0 / 7%), transparent 40%),
-    radial-gradient(circle at 80% 0%, rgb(0 37 35 / 12%), transparent 45%),
-    repeating-linear-gradient(
-      to bottom,
-      rgba(180,140,100,0.06) 0,
-      rgba(180,140,100,0.06) 1px,
-      transparent 1px,
-      transparent 26px
-    );
 }
 
 /* =========================
@@ -90,19 +78,13 @@ img {
    CLAIM (PROTAGONISTA)
 ========================= */
 .claim {
-  text-shadow: 0 2px 6px rgb(255 211 88 / 25%);
-}
-.claim {
   position: relative;
-  margin-top: 10px;
+  margin-top: 50px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-
   font-size: clamp(1rem, 3.5vw, 1.35rem);
-
   color: #ba1c1c; /* marrón rojizo principal */
-
   transition:
     transform 0.4s ease,
     opacity 0.4s ease;
@@ -141,7 +123,7 @@ main {
    PANELES
 ========================= */
 .panel {
-  background: linear-gradient(to bottom, rgb(242 243 241), rgb(253 251 245));
+  background: linear-gradient(to bottom, rgb(250 250 250), rgb(242 242 242));
   border-radius: 22px;
   padding: clamp(24px, 5vw, 40px);
   margin: clamp(48px, 8vw, 72px) 0;
@@ -343,14 +325,14 @@ body::before {
   inset: 0;
   z-index: -1;
   background-image:
-    radial-gradient(circle at 20% 10%, rgb(208 152 64 / 14%), transparent 42%),
+    radial-gradient(circle at 20% 10%, rgb(196 139 0 / 14%), transparent 42%),
     radial-gradient(circle at 80% 0%, rgb(180 156 91 / 18%), #3b190000 48%),
     repeating-linear-gradient(
       to bottom,
-      rgba(180,140,100,0.08) 0,
-      rgba(180,140,100,0.08) 1px,
-      transparent 1px,
-      transparent 26px
+      rgb(33 166 170 / 5%) 0,
+      rgb(254 255 231 / 8%) 3px,
+      transparent 5px,
+      transparent 15px
     );
   transform: translateZ(0);
 }
