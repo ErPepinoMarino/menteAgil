@@ -1,21 +1,21 @@
 /* =========================
-   PALETA BASE
+   PALETA
 ========================= */
 :root {
   --bg-main: #f3efe2;
   --bg-panel: #fbf7ee;
-  --bg-card: #f6e1c4;
+  --bg-card: #f4dcc0;
 
   --accent: #fdad30;
   --secondary: #b48868;
-  --dark: #8f2b17;
+  --dark: #7a2416;
 
-  --text-main: #2b2622;   /* un poco más contraste */
+  --text-main: #2a2521;
   --text-soft: #5a5149;
 
-  --shadow-panel: 0 16px 36px rgba(80, 60, 30, 0.14);
-  --shadow-card: 0 14px 28px rgba(80, 60, 30, 0.18);
-  --shadow-lift: 0 26px 56px rgba(80, 60, 30, 0.28);
+  --shadow-soft: 0 12px 28px rgba(60,40,20,0.12);
+  --shadow-mid: 0 20px 48px rgba(60,40,20,0.18);
+  --shadow-lift: 0 32px 72px rgba(60,40,20,0.28);
 }
 
 /* =========================
@@ -28,19 +28,19 @@
 }
 
 img {
+  display: block;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 /* =========================
-   BODY – fondo orgánico
+   BODY
 ========================= */
 body {
   margin: 0;
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--text-main);
-  line-height: 1.75;
+  line-height: 1.7;
   background-color: var(--bg-main);
   background-image:
     radial-gradient(circle at 20% 10%, rgba(253,173,48,0.10), transparent 40%),
@@ -50,7 +50,7 @@ body {
       rgba(180,140,100,0.06) 0,
       rgba(180,140,100,0.06) 1px,
       transparent 1px,
-      transparent 26px
+      transparent 28px
     );
 }
 
@@ -62,136 +62,99 @@ main,
 footer {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 56px 24px;
+  padding: 48px 24px;
 }
 
 section {
-  margin: 88px 0;
+  margin: 80px 0;
 }
 
 /* =========================
-   TIPOGRAFÍA
-========================= */
-h2 {
-  font-size: 2.6rem;
-  font-weight: 750;
-  color: var(--dark);
-  text-align: center;
-  margin: 0 0 0.6em; /* equidistancia real */
-}
-
-p {
-  font-size: 1.14rem;
-  color: var(--text-soft);
-}
-
-/* =========================
-   HERO
+   HERO (FIX DEFINITIVO)
 ========================= */
 .hero {
   text-align: center;
-  padding-bottom: 6px;
+  padding-bottom: 8px;
 }
 
 .hero img {
-  max-width: 760px;
+  width: 100%;
+  max-width: 1025px;               /* tamaño real del asset */
+  aspect-ratio: 1025 / 500;
+  object-fit: contain;
   margin: 0 auto;
   border-radius: 28px;
-  box-shadow:
-    0 32px 80px rgba(80,60,30,0.25),
-    0 10px 28px rgba(80,60,30,0.18);
-  transition: transform 0.4s ease;
-}
-
-.hero img:hover {
-  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
 }
 
 /* =========================
-   CLAIM – scroll animation
+   CLAIM
 ========================= */
 .claim {
-  margin-top: 22px;
+  margin-top: 20px;
   font-size: 1.55rem;
   font-weight: 850;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   background: linear-gradient(
     90deg,
-    #6f1d12,
-    #a13a22,
-    #6f1d12
+    #6b1c12,
+    #9a3321,
+    #6b1c12
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-/* animación suave con scroll */
-@media (prefers-reduced-motion: no-preference) {
-  .claim {
-    animation: claimFade 0.9s ease both;
-    animation-timeline: view();
-    animation-range: entry 10% cover 30%;
-  }
-
-  @keyframes claimFade {
-    from {
-      opacity: 0;
-      transform: translateY(18px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 }
 
 /* =========================
    PANEL
 ========================= */
 .panel {
-  background: linear-gradient(180deg, var(--bg-panel), #f5eddc);
+  background: linear-gradient(180deg, var(--bg-panel), #f4ebda);
   border-radius: 26px;
   padding: 40px;
-  box-shadow: var(--shadow-panel);
+  box-shadow: var(--shadow-soft);
   max-width: 760px;
-  margin: -18px auto 0;
+  margin: -14px auto 0;
 }
 
 /* =========================
-   INTRO
+   TIPOGRAFÍA
 ========================= */
-.intro {
+h2 {
+  font-size: 2.5rem;
+  font-weight: 750;
+  color: var(--dark);
   text-align: center;
+  margin: 0 0 0.6em;
 }
 
-.intro p {
-  max-width: 60ch;
-  margin: 0 auto;
+p {
+  font-size: 1.12rem;
+  color: var(--text-soft);
 }
 
 /* =========================
-   GALERÍA
+   GALERÍA (mockups 1080x1920)
 ========================= */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 18px;
-  margin-top: 32px;
 }
 
 .gallery img {
   border-radius: 14px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery img:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-mid);
 }
 
 /* =========================
-   VÍDEO
+   VIDEO (centrado real)
 ========================= */
 .video-wrapper {
   position: relative;
@@ -208,7 +171,7 @@ p {
   height: 100%;
   border-radius: 18px;
   border: none;
-  box-shadow: var(--shadow-panel);
+  box-shadow: var(--shadow-soft);
 }
 
 /* =========================
@@ -217,32 +180,26 @@ p {
 .versions {
   display: flex;
   justify-content: center;
-  gap: 56px;
+  gap: 48px;
   flex-wrap: wrap;
 }
 
 .app-card {
-  background: linear-gradient(180deg, #f7e3c6, #f3d8b6);
-  border-radius: 28px;
-  padding: 32px;
+  background: linear-gradient(180deg, #f6e1c6, #f1d6b5);
+  border-radius: 26px;
+  padding: 28px;
   max-width: 240px;
-  box-shadow: var(--shadow-card);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
   text-align: center;
-}
-
-.app-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lift);
+  box-shadow: var(--shadow-mid);
 }
 
 .app-card img {
   max-width: 100%;
-  margin: 0 auto 14px;
+  margin-bottom: 14px;
 }
 
 /* =========================
-   SHARE – iconos pequeños
+   SHARE (FIX DEFINITIVO)
 ========================= */
 .share {
   text-align: center;
@@ -252,51 +209,24 @@ p {
 .share-icons {
   display: flex;
   justify-content: center;
-  gap: 22px;
+  gap: 24px;
 }
 
 .share-icons img {
-  width: 22px;
-  height: 22px;
-  display: block;
-  transition: transform 0.25s ease;
-}
-
-.share-icons img:hover {
-  transform: scale(1.15);
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  flex: 0 0 auto;
+  transform: none !important;
 }
 
 /* =========================
-   FOOTER – muy pequeño
+   FOOTER – letra pequeña real
 ========================= */
 footer {
   text-align: center;
-  font-size: 0.5rem; /* mitad real */
+  font-size: 0.38rem;
+  letter-spacing: 0.08em;
   color: #6a6158;
-}
-
-footer a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 600px) {
-  h2 {
-    font-size: 2.1rem;
-  }
-
-  .claim {
-    font-size: 1.3rem;
-  }
-
-  .panel {
-    padding: 30px 22px;
-  }
-
-  .versions {
-    gap: 36px;
-  }
 }
