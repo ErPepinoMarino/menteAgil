@@ -90,22 +90,44 @@ img {
    CLAIM (PROTAGONISTA)
 ========================= */
 .claim {
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  text-shadow: 0 2px 6px rgba(156,74,43,0.25);
+}
+.claim {
+  position: relative;
+  margin-top: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
-  font-size: clamp(0.8rem, 2.5vw, 1rem);
-  animation: claimReveal 1.4s ease-out both;
+
+  font-size: clamp(1rem, 3.5vw, 1.35rem);
+
+  color: #9c4a2b; /* marrón rojizo principal */
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
 }
 
-@keyframes claimReveal {
+.hero {
+  view-timeline-name: --hero;
+  view-timeline-axis: block;
+}
+
+.claim {
+  animation-name: claimScroll;
+  animation-timeline: --hero;
+  animation-range: exit 0% exit 60%;
+  animation-fill-mode: both;
+}
+
+@keyframes claimScroll {
   from {
-    opacity: 0;
-    transform: translateY(12px);
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(-20px) scale(0.94);
   }
 }
 
@@ -122,22 +144,31 @@ main {
    PANELES
 ========================= */
 .panel {
-  background: var(--panel-bg);
-  border-radius: 20px;
+  background:
+    linear-gradient(
+      to bottom,
+      #fff7f1,
+      #ffffff
+    );
+  border-radius: 22px;
   padding: clamp(24px, 5vw, 40px);
   margin: clamp(48px, 8vw, 72px) 0;
-  box-shadow: var(--shadow-soft);
+  box-shadow:
+    0 14px 34px rgba(120,70,40,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.8);
 }
 
 h2 {
   margin: 0 0 16px;
   line-height: 1.25;
   text-align: center;
+  color: #6b3b24; /* marrón oscuro */
+  font-weight: 700;
 }
 
 .panel p {
   text-align: center;
-  color: var(--text-soft);
+  color: #7a5543; /* marrón suave legible */
 }
 
 /* =========================
@@ -284,4 +315,21 @@ footer p {
     animation: none !important;
     transition: none !important;
   }
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(253,173,48,0.14), transparent 42%),
+    radial-gradient(circle at 80% 0%, rgba(180,136,104,0.18), transparent 48%),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(180,140,100,0.08) 0,
+      rgba(180,140,100,0.08) 1px,
+      transparent 1px,
+      transparent 26px
+    );
+  transform: translateZ(0);
 }
